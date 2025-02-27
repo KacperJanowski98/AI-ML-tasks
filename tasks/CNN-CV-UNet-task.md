@@ -57,5 +57,3 @@ class UNet(nn.Module):
         # Data flow through encoder
         skip1 = self.down1(x); x = self.pool1(skip1)
 ```
-
-Sources: Segmentation of ultrasound, U-Net architecture, and metrics based on literature and documentation: speckle noise in US reduces image quality; U-Net—architecture for biomedical segmentation (winning ISBI 2015); TensorRT optimization (layer fusing, precision calibration) accelerates inference on GPU; Dice coefficient—common overlap measure with definition; Jaccard index (IoU)—definition. All these elements were included in the prepared solution.
