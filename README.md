@@ -1,83 +1,93 @@
-> **[task clarifying update]** \
-> **[committed Feb, the 19th, 2025]** \
-> **[Feb, the 20th, 2025 whisper nodejs server added as an example or base for your frontend implementation project - 4 hours of coding with AI agents and MCP tools]**
+# AI/ML Technical Assessment Tasks
 
-# Technical Assessment Tasks
-
-This repository contains **two technical assessment tasks** focusing on rapid prototyping and agentic coding skills. The tasks are designed to evaluate your approach to **problem-solving** and ability to **quickly create functional prototypes**.
+This repository contains **specialized technical assessment tasks** focusing on AI/ML engineering skills. The tasks are designed to evaluate your approach to **problem-solving** in machine learning contexts and ability to **efficiently implement and optimize ML models**.
 
 ## 🎯 Key Points
 
-1. **Focus on Rapid Prototyping:** These tasks **are NOT** about building **~~production-ready features~~**. We want to see your approach to quick, efficient problem-solving.
-2. **Time Expectation:** you decide - the greater results brought faster would be much more appreciated than *hmmm* - the opposite 😁
-3. **Evaluation Priority:** Problem-solving approach > Code completeness
-4. **Tool Freedom:** Use any libraries/tools you prefer - the end result matters most
+1. **Focus on Practical Implementation:** These tasks **are NOT** about building **~~production-ready systems~~**. We want to see your approach to ML engineering challenges.
+2. **Time Expectation:** Most tasks are designed to be completed in 3-6 hours by an experienced AI/ML engineer.
+3. **Evaluation Priority:** Problem-solving approach > Code completeness > Perfect accuracy
+4. **Tool Freedom:** Use any libraries/frameworks you prefer - the end result matters most
 
 ## 💡 What We're Looking For
 
-### Smart Trade-offs:
+### Smart Engineering Decisions:
 
-- Choose what to implement vs what to mock
-- Focus on core functionality over complex code
-- Document your decisions
+- Choose appropriate model architectures and optimization techniques
+- Make sensible trade-offs between accuracy and efficiency
+- Demonstrate understanding of ML model deployment considerations
+- Document your decisions and thought process
 
 ### Technical Skills:
 
-- Basic implementation of key features
+- Solid implementation of key ML components
 - Clean, readable code structure
 - Understanding of performance considerations
+- Effective data preprocessing and model evaluation
 
 ### Problem Solving:
 
-- How you approach complex requirements
-- Which shortcuts you take (and why)
-- How you document your thought process
+- How you approach complex ML requirements
+- Which techniques you choose (and why)
+- How you debug and improve model performance
+- Your analysis of results and limitations
 
 ## 🚀 Tasks Overview
 
-### Smart Nature Observer 
-> [Detailed documentation](https://github.com/Szowesgad/technical-assessment-tasks/blob/libraxis/tasks/task-1.md)
+### Medical Image Segmentation with U-Net
+> [Detailed documentation](./tasks/Medical-Image-Segmentation-task.md)
 
-1. Video processing prototype
-2. Real-time analysis simulation
-3. Basic UI for interaction
+1. Implement U-Net architecture for medical image segmentation
+2. Develop effective preprocessing for ultrasound images
+3. Apply optimization techniques for edge deployment
+4. Evaluate model performance with appropriate metrics
 
-### Smart Voice Notes Organizer
-> [Detailed documentation](https://github.com/Szowesgad/technical-assessment-tasks/blob/libraxis/tasks/task-2.md)
+### LLM Optimization for Edge Devices
+> [Detailed documentation](./tasks/LLM-Optimization-task.md)
 
-1. Audio processing prototype
-2. Text analysis simulation
-3. Simple organization interface
+1. Optimize a pre-trained language model for edge deployment
+2. Implement techniques like knowledge distillation, pruning, and quantization
+3. Benchmark performance metrics before and after optimization
+4. Document deployment considerations
+
+### Domain-Specific Speech Recognition
+> [Detailed documentation](./tasks/Domain-Speech-Recognition-task.md)
+
+1. Create a synthetic dataset for domain-specific speech recognition
+2. Fine-tune Whisper model using LoRA or Axolotl
+3. Implement robust preprocessing for noisy audio
+4. Evaluate and compare with baseline model
 
 ## 📝 Getting Started
 
 ### Choose Your Focus:
 
-1. Pick the most interesting aspects to implement
-2. Mock or simulate complex features
-3. Document what you would do with more time
+1. Pick the task that best matches your skills and interests
+2. Read through the task documentation completely
+3. Plan your approach before starting implementation
 
 ### Quick Setup:
 
 1. Fork this repository
-2. Use provided example code as starting point
-3. Start with basic functionality
+2. Use the provided code examples as starting points
+3. Focus on the core ML components first
 
 ## Submission:
 
-1. Working prototype (even if limited in scope)
-2. Documentation of your approach
-3. Notes about trade-offs made
+1. Working solution with clear documentation
+2. Include all code, Jupyter notebooks, or scripts used
+3. Technical report describing your approach, experiments, and results
+4. Notes about trade-offs made and potential improvements
 
 ## ⚡ Example Approach
 
-### A good prototype might include:
+### A good submission might include:
 
-- Basic UI skeleton
-- Simulated ML processing
-- One or two core features working
-- Clear documentation of what's mocked/simulated
-- Notes about how you'd expand it in production
+- Clean, organized code with clear structure
+- Well-documented experiments and parameter choices
+- Visualizations of results and model performance
+- Analysis of optimization techniques and their impact
+- Thoughtful discussion of limitations and future work
 
 ### ❓ Questions?
 
@@ -90,16 +100,17 @@ This repository contains **two technical assessment tasks** focusing on rapid pr
 ### We value:
 
 1. Clean, maintainable code
-2. Smart architectural decisions
-3. Clear documentation of trade-offs
-4. Working prototype (even if limited)
+2. Smart engineering decisions
+3. Clear documentation of experiments and results
+4. Working implementation (even if limited)
+5. Thoughtful analysis of your solution
 
 ### We don't expect:
 
-- Production-ready code
-- Full feature implementation
-- Perfect error handling
-- Complete test coverage
+- State-of-the-art results
+- Perfect accuracy/performance
+- Comprehensive solution to all task aspects
+- Production-ready deployment
 
 ## &nbsp;
 > 📖 License
