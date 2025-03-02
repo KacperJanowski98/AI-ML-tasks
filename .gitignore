@@ -1,2 +1,3 @@
 .DS_Store
 examples/whisper-server/server/whisper.docs/Package.swift
+.venv/
