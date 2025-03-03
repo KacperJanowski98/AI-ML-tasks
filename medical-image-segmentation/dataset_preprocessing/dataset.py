@@ -11,7 +11,7 @@ from torchvision import transforms
 import matplotlib.pyplot as plt
 from typing import Tuple, List, Dict, Optional, Callable
 
-from preprocessing import preprocess_ultrasound_image, preprocess_mask
+from dataset_preprocessing.preprocessing import preprocess_ultrasound_image, preprocess_mask
 
 
 class BUSIDataset(Dataset):
