@@ -7,9 +7,8 @@ import cv2
 import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms
 import matplotlib.pyplot as plt
-from typing import Tuple, List, Dict, Optional, Callable
+from typing import Tuple, Dict, Optional, Callable
 
 from dataset_preprocessing.preprocessing import preprocess_ultrasound_image, preprocess_mask
 

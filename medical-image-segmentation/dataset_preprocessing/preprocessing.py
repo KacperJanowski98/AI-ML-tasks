@@ -5,7 +5,7 @@ Implements various preprocessing techniques for ultrasound images.
 
 import cv2
 import numpy as np
-from typing import Tuple, Optional
+from typing import Tuple
 
 
 def convert_to_grayscale(image: np.ndarray) -> np.ndarray:
