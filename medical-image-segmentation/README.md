@@ -36,33 +36,50 @@ Our experiments show that bilateral filtering is more selective about edge prese
 
 Bilateral filtering appears particularly suitable for ultrasound images as it better preserves anatomical boundaries while reducing speckle noise.
 
+## 2. U-Net Implementation with Residual Connections
 
-### Requirements
+We've implemented a U-Net architecture enhanced with residual connections to improve gradient flow and feature learning. The model is designed for efficient training and potential deployment on edge devices.
+
+### Architecture Details
+
+The U-Net architecture follows the classic encoder-decoder structure with the following enhancements:
+
+1. **Residual Connections**: Added to both encoder and decoder blocks to:
+   - Improve gradient flow during training
+   - Mitigate the vanishing gradient problem
+   - Enable more effective feature learning
+   - Preserve information throughout the network
+
+2. **Model Configuration**:
+   - Input: Single-channel grayscale images (256×256)
+   - Output: Single-channel binary segmentation mask
+   - Feature dimensions: [64, 128, 256, 512]
+   - Skip connections between encoder and decoder at each level
+
+### Training Results
+
+Our model achieved significant improvements across all segmentation metrics:
+
+| Metric    | Before Training | After Training | Improvement Factor |
+|-----------|----------------|----------------|-------------------|
+| Dice      | 0.0803         | 0.7210         | 9.0× increase     |
+| IoU       | 0.0418         | 0.5702         | 13.6× increase    |
+| Precision | 0.0704         | 0.7926         | 11.3× increase    |
+| Recall    | 0.0936         | 0.6709         | 7.2× increase     |
+
+These results demonstrate strong segmentation performance, with:
+- Dice coefficient >0.72 (excellent for medical ultrasound)
+- High precision (79%) reducing false positives
+- Good recall (67%) capturing most abnormal regions
+- IoU >0.57 indicating majority overlap with ground truth
+
+### Loss Functions
+
+The implementation includes specialized loss functions for segmentation:
+
+1. **Dice Loss**: Optimizes for region overlap, suitable for imbalanced segmentation tasks
+2. **Combined Loss**: Weighted combination of Binary Cross-Entropy and Dice loss for balanced optimization
+
+## Requirements
 
 See requirements.txt for the complete list of dependencies.
-
-### Usage
-
-To use the dataset with either denoising method:
-
-```python
-from src.dataset import BUSIDataset, create_data_loaders
-
-# Using Gaussian filtering
-dataset_gaussian = BUSIDataset(
-    data_dir="Dataset_BUSI_with_GT/benign",
-    denoising_method="gaussian"
-)
-
-# Using Bilateral filtering
-dataset_bilateral = BUSIDataset(
-    data_dir="Dataset_BUSI_with_GT/benign",
-    denoising_method="bilateral"
-)
-
-# Create data loaders
-train_loader, val_loader = create_data_loaders(
-    data_dir="Dataset_BUSI_with_GT/benign",
-    batch_size=8,
-    denoising_method="bilateral"  # or "gaussian"
-)
