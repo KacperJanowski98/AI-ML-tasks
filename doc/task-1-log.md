@@ -202,3 +202,75 @@ Myślę, że taka architektura stanowi dobrą podstawę i punkt odniesienia do w
 - Szum plamkowy: Charakterystyczny szum plamkowy USG tworzy wzory tekstur, które GroupNorm może pomóc standaryzować bez eliminowania ważnych informacji o teksturze.
 - Małe wymiary partii (Batch Sizes): GroupNorm działa spójnie niezależnie od rozmiaru partii, w przeciwieństwie do BatchNorm.
 - Granice niskiego kontrastu: GroupNorm pomaga wzmocnić subtelne różnice między tkankami, co jest kluczowe w przypadku USG, gdzie granice mogą być słabo zdefiniowane.
+
+# 3. Optymalizacja na urządzenia brzegowe
+
+### Kwantyzacja
+
+Zacząłbym od kwantyzacji, ponieważ jest najprostsza i daje dobre rezultat (trzeba to wszystko weryfikować testami i porównywać metryki). Można porównać działanie kwantyzacji statycznej, dynamicznej oraz szkolenie uwzględniające kwantyzację, które:
+
+- Symuluje kwantyzację podczas treningu.
+- Umożliwia modelowi dostosowanie się do efektów kwantyzacji podczas treningu.
+
+**Korzyści z kwantyzacji**
+
+- Redukujemy wielkość modelu: 75% redukcja rozmiaru przy konwersji z FP32 do INT8, takie zmniejszenie wielkości modelu zdecydowanie ułatwia uruchamianie na urządzeniach brzegowych.
+- Szybsze wnioskowanie: Operacje na liczbach całkowitych są szybsze niż operacje na liczbach zmiennoprzecinkowych na większości sprzętu.
+- Niższe zużycie energii: Operacje całkowite zużywają mniej energii niż operacje zmiennoprzecinkowe (mniej operacji do wykonywania dla procesora, czyli mniej energi).
+- Obecnie hardware jest wyposażony również w akceleratory dla AI, które są zoptymalizowane pod kątem operacji 8-bitowych.
+
+**Wady:**
+
+- Potencjalna utrata dokładności: Niższa precyzja numeryczna może mieć wpływ na jakość segmentacji, zwłaszcza w obrazowaniu medycznym. Najbardziej mogą ucierpieć drobne szczegóły i obszary graniczne.
+- Złożoność implementacji: QAT wymaga ponownego przeszkolenia i dostrojenia hiperparametrów. Kwantyzacja statyczna wymaga danych kalibracyjnych.
+- Potencjalne błędy diagnostyczne: W przypadku segmentacji medycznej nawet niewielkie spadki dokładności mogą mieć kluczowe znaczenie.
+
+### Jak można testować optymalizowane modele:
+
+- Utworzenie zestawów danych testowych, które uwzględniają zarówno typowe, jak i skrajne przypadki. Uwzględniają próbki z drobnymi szczegółami i trudnymi do znalezienia granicami.
+- Testy A/B. Porównujemy wyniki segmentacji obok siebie. Wybieramy te przypadki gdzie wyniki modelu po optymalizacji różnią się od oryginału. Prosimy ekspertów domenowych aby zweryfikowali rozbieżności.
+- Najlepiej byłoby uruchomić model na docelowym sprzęcie i zobaczyć jak wydajnie działa.
+
+### Optymalizacja ONNX Runtime
+
+Jak mamy model w formacie ONNX to możemy użyć ONNX Runtime, który jest wydajnym silnikiem wnioskowania dla modeli ONNX, który umożliwia wdrażanie modeli na szerokiej gamie platform sprzętowych ze zoptymalizowaną wydajnością.
+
+**Zalety:**
+
+- możliwość uruchomienia na różnych platformach (np stacja robocza i urządzenie brzegowe)
+- Optymalizacja wydajności: może przyśpieszyć wnioskowanie kilkukrotnie w porównaniu do natywnego modelu PyTorch. Ponadto, zmiejszy zużycie energii.
+
+W tym wypadku również istnieje kilka sposób optymalizacji:
+
+- Constant Folding: Wstępnie oblicza operacje statyczne
+- Node Fusion: Łączy wiele operacji w zoptymalizowane jądra
+- Memory Planning: Minimalizuje alokacje pamięci i kopie
+- Parallelization: Identyfikuje ścieżki równoległego wykonywania
+
+### Przycinanie 
+
+Jeżeli potrzebujemy jeszcze większe szybkości można zastosować przycinanie
+
+- Zmniejsza rozmiar modelu dzięki regulowanemu współczynnikowi rzadkości (np. usuwając 20% wag)
+- Możliwość utrzymania dokładności w przypadku modeli o zbyt dużej liczbie parametrów
+- Można łączyć z kwantyzacją w celu uzyskania złożonych korzyści
+
+Wadą jest to, że wymaga fine-tuningu w celu zachowania dokłądności, ale zachowuje architekturę sieci.
+
+Jeżeli chcemy to zastosować to warstwami. Można zastosować agresywne podejście w warstwach enkodera (które mają tendencję do bycia bardziej redundantnymi), a bardziej ostrożne przycinanie krytycznych komponentów, takich jak ostatnia warstwa (wydobywa drobne szczegóły).
+
+### Destylacja wiedzy
+
+Ja bym był ciekawy jak zadziała destylacja wiedzy, która polega na szkoleniu mniejszego, bardziej wydajnego modelu (ucznia), aby naśladował zachowanie większego modelu (nauczyciela):
+
+**Co by to dało?**
+
+- Lepszy kompromis między wydajnością a rozmiarem: model studenta często osiągają lepsze wyniki niż bezpośrednio trenowane modele o tej samej wielkości.
+- Regularyzacja: redukcja nadmiernego dopasowania poprzez mechanizm soft target (model nauczyciela generuje rozkłady prawdopodobieństwa na podstawie wyników, a nie tylko twarde klasyfikacje).
+- Efektywność danych: możliwość pracy z mniejszą liczbą oznaczonych danych dzięki uogólnionej wiedzy nauczyciela.
+- Uproszczenie: usuwa złożoność, zachowując jednocześnie cechy krytyczne dla zadania.
+
+**Wady:**
+
+- Proces dwuetapowy: wymaga przeszkolenia nauczyciela, a następnie ucznia.
+- Pułap jakości nauczyciela: Wydajność ucznia jest ograniczona wydajnością nauczyciela. Należałoby zbudować model nauczyciela najlepiej jak można, duża ilość modyfikacji, testów rozwiązań i porównań.
