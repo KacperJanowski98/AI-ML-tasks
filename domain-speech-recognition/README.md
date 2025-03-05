@@ -16,6 +16,7 @@ Speech recognition systems often struggle with specialized terminology and noisy
 
 ## Project Structure
 
+```
 domain-speech-recognition/
 ├── data/
 │   ├── noise_samples/         # Background noise audio files
@@ -35,6 +36,7 @@ domain-speech-recognition/
 │   ├── inference.py           # Inference script for model testing
 │   └── validate_dataset.py    # Dataset validation
 └── requirements.txt           # Project dependencies
+```
 
 ## Setup
 
