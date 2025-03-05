@@ -1,0 +1,61 @@
+model,prediction,reference,wer,domain_term_accuracy,domain_terms_in_reference,domain_terms_correct,noise_type,snr
+Baseline," Code 10-31 in progress at 1420 Alma Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.09090909090909091,1.0,1,1,crowd,5.0
+Fine-tuned," Code 10-31 in progress at 1420 Alma Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.09090909090909091,1.0,1,1,crowd,5.0
+Baseline, Stolen vehicle recovered at abandoned warehouse on Industrial Drive.,Stolen vehicle recovered at abandoned warehouse on Industrial Drive.,0.0,,0,0,crowd,10.0
+Fine-tuned, Stolen vehicle recovered at abandoned warehouse on Industrial Drive.,Stolen vehicle recovered at abandoned warehouse on Industrial Drive.,0.0,,0,0,crowd,10.0
+Baseline, Multiple witnesses confirmed disturbance at the south entrance of the mall.,Multiple witnesses confirm disturbance at the south entrance of the mall.,0.09090909090909091,1.0,1,1,crowd,15.0
+Fine-tuned, Multiple witnesses confirmed disturbance at the south entrance of the mall.,Multiple witnesses confirm disturbance at the south entrance of the mall.,0.09090909090909091,1.0,1,1,crowd,15.0
+Baseline," Be advised, suspect is considered armed and dangerous. Proceed with caution.","Be advised, suspect is considered armed and dangerous, proceed with caution.",0.18181818181818182,1.0,1,1,crowd,5.0
+Fine-tuned," Be advised, suspect is considered armed and dangerous. Proceed with caution.","Be advised, suspect is considered armed and dangerous, proceed with caution.",0.18181818181818182,1.0,1,1,crowd,5.0
+Baseline," Traffic stop initiated on Silver sedan. License plate Alpha Bravo CHAR, LiE 123.","Traffic stop initiated on silver sedan, license plate Alpha-Bravo-Charlie-123.",0.8888888888888888,,0,0,crowd,5.0
+Fine-tuned," Traffic stop initiated on Silver sedan. License plate Alpha Bravo CHAR, LiE 123.","Traffic stop initiated on silver sedan, license plate Alpha-Bravo-Charlie-123.",0.8888888888888888,,0,0,crowd,5.0
+Baseline," Surveillance footage shows suspect entering the building at approximately 2,300 hours.",Surveillance footage shows suspect entering the building at approximately 2300 hours.,0.09090909090909091,1.0,2,2,crowd,15.0
+Fine-tuned," Surveillance footage shows suspect entering the building at approximately 2,300 hours.",Surveillance footage shows suspect entering the building at approximately 2300 hours.,0.09090909090909091,1.0,2,2,crowd,15.0
+Baseline," Witness describes perpetrator as male, approximately 6 feet 2 inches, wearing dark hoodie and jeans.","Witness describes perpetrator as male, approximately 6'2"", wearing dark hoodie and jeans.",0.3333333333333333,1.0,2,2,crowd,10.0
+Fine-tuned," Witness describes perpetrator as male, approximately 6 feet 2 inches, wearing dark hoodie and jeans.","Witness describes perpetrator as male, approximately 6'2"", wearing dark hoodie and jeans.",0.3333333333333333,1.0,2,2,crowd,10.0
+Baseline, Vehicle matching Bolo description spotted heading eastbound on Highway 42.,Vehicle matching BOLO description spotted heading eastbound on Highway 42.,0.1,1.0,1,1,wind,10.0
+Fine-tuned, Vehicle matching Bolo description spotted heading eastbound on Highway 42.,Vehicle matching BOLO description spotted heading eastbound on Highway 42.,0.1,1.0,1,1,wind,10.0
+Baseline," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,crowd,15.0
+Fine-tuned," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,crowd,15.0
+Baseline," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,clean,
+Fine-tuned," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,clean,
+Baseline," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,traffic,10.0
+Fine-tuned," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,traffic,10.0
+Baseline," Witness describes perpetrator as male, approximately 6 feet 2 inches, wearing dark hoodie and jeans.","Witness describes perpetrator as male, approximately 6'2"", wearing dark hoodie and jeans.",0.3333333333333333,1.0,2,2,traffic,15.0
+Fine-tuned," Witness describes perpetrator as male, approximately 6 feet 2 inches, wearing dark hoodie and jeans.","Witness describes perpetrator as male, approximately 6'2"", wearing dark hoodie and jeans.",0.3333333333333333,1.0,2,2,traffic,15.0
+Baseline," Dispatch. We have a 10-50 at the corner of 5th and Pine, medical assistance required.","Dispatch, we have a 10-50 at the corner of 5th and Pine, medical assistance required.",0.13333333333333333,1.0,2,2,traffic,15.0
+Fine-tuned," Dispatch, we have a 10-50 at the corner of 5th and Pine, medical assistance required.","Dispatch, we have a 10-50 at the corner of 5th and Pine, medical assistance required.",0.0,1.0,2,2,traffic,15.0
+Baseline," Proceeding to serve warrant at 728, Oak Drive, requesting additional units.","Proceeding to serve warrant at 728 Oak Drive, requesting additional units.",0.09090909090909091,1.0,1,1,crowd,10.0
+Fine-tuned," Proceeding to serve warrant at 728, Oak Drive, requesting additional units.","Proceeding to serve warrant at 728 Oak Drive, requesting additional units.",0.09090909090909091,1.0,1,1,crowd,10.0
+Baseline," Surveillance footage shows suspect entering the building at approximately 2,300 hours.",Surveillance footage shows suspect entering the building at approximately 2300 hours.,0.09090909090909091,1.0,2,2,clean,
+Fine-tuned," Surveillance footage shows suspect entering the building at approximately 2,300 hours.",Surveillance footage shows suspect entering the building at approximately 2300 hours.,0.09090909090909091,1.0,2,2,clean,
+Baseline," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,traffic,15.0
+Fine-tuned," Code 10-31 in progress at 1420 Elm Street, proceeding with caution.","Code 10-31 in progress at 1420 Elm Street, proceeding with caution.",0.0,1.0,1,1,traffic,15.0
+Baseline," Officer down at 1235 West Boulevard, requesting immediate assistance.","Officer down at 1235 West Boulevard, requesting immediate assistance.",0.0,1.0,2,2,traffic,5.0
+Fine-tuned," Officer down at 1235 West Boulevard, requesting immediate assistance.","Officer down at 1235 West Boulevard, requesting immediate assistance.",0.0,1.0,2,2,traffic,5.0
+Baseline," Witness describes perpetrator as male, approximately 6 feet 2 inches, wearing dark hoodie and jeans.","Witness describes perpetrator as male, approximately 6'2"", wearing dark hoodie and jeans.",0.3333333333333333,1.0,2,2,wind,10.0
+Fine-tuned," Witness describes perpetrator as male, approximately 6 feet 2 inches, wearing dark hoodie and jeans.","Witness describes perpetrator as male, approximately 6'2"", wearing dark hoodie and jeans.",0.3333333333333333,1.0,2,2,wind,10.0
+Baseline, Code 10 to 15. Transporting suspect to central booking.,"Code 10-15, transporting suspect to central booking.",0.5714285714285714,1.0,1,1,crowd,10.0
+Fine-tuned, Code 10-15. Transporting suspect to central booking.,"Code 10-15, transporting suspect to central booking.",0.2857142857142857,1.0,1,1,crowd,10.0
+Baseline," Suspect detained at intersection of Main and Broadway, requesting backup.","Suspect detained at intersection of Main and Broadway, requesting backup.",0.0,1.0,2,2,traffic,15.0
+Fine-tuned," Suspect detained at intersection of Main and Broadway, requesting backup.","Suspect detained at intersection of Main and Broadway, requesting backup.",0.0,1.0,2,2,traffic,15.0
+Baseline," Dispatch. We have a 10-50 at the corner of 5th and Pine, medical assistance required.","Dispatch, we have a 10-50 at the corner of 5th and Pine, medical assistance required.",0.13333333333333333,1.0,2,2,clean,
+Fine-tuned," Dispatch, we have a 10-50 at the corner of 5th and Pine, medical assistance required.","Dispatch, we have a 10-50 at the corner of 5th and Pine, medical assistance required.",0.0,1.0,2,2,clean,
+Baseline," Officer requesting 10-78, hostile crowd, forming near the plaza.","Officer requesting 10-78, hostile crowd forming near the plaza.",0.1111111111111111,1.0,1,1,wind,5.0
+Fine-tuned," Officer requesting 10-78, hostile crowd forming near the plaza.","Officer requesting 10-78, hostile crowd forming near the plaza.",0.0,1.0,1,1,wind,5.0
+Baseline," Officer down at 1235 West Boulevard, requesting immediate assistance.","Officer down at 1235 West Boulevard, requesting immediate assistance.",0.0,1.0,2,2,crowd,15.0
+Fine-tuned," Officer down at 1235 West Boulevard, requesting immediate assistance.","Officer down at 1235 West Boulevard, requesting immediate assistance.",0.0,1.0,2,2,crowd,15.0
+Baseline," Suspect detained at intersection of Main and Broadway, requesting backup.","Suspect detained at intersection of Main and Broadway, requesting backup.",0.0,1.0,2,2,wind,15.0
+Fine-tuned," Suspect detained at intersection of Main and Broadway, requesting backup.","Suspect detained at intersection of Main and Broadway, requesting backup.",0.0,1.0,2,2,wind,15.0
+Baseline," Officer requesting 10-78, hostile crowd, forming near the plaza.","Officer requesting 10-78, hostile crowd forming near the plaza.",0.1111111111111111,1.0,1,1,crowd,10.0
+Fine-tuned," Officer requesting 10-78, hostile crowd forming near the plaza.","Officer requesting 10-78, hostile crowd forming near the plaza.",0.0,1.0,1,1,crowd,10.0
+Baseline," Surveillance footage shows suspect entering the building at approximately 2,300 hours.",Surveillance footage shows suspect entering the building at approximately 2300 hours.,0.09090909090909091,1.0,2,2,crowd,5.0
+Fine-tuned, Surveillance footage shows suspect entering the building at approximately 2300 hours.,Surveillance footage shows suspect entering the building at approximately 2300 hours.,0.0,1.0,2,2,crowd,5.0
+Baseline," Proceeding to serve warrant at 728, Oak Drive. Requesting additional units.","Proceeding to serve warrant at 728 Oak Drive, requesting additional units.",0.2727272727272727,1.0,1,1,traffic,15.0
+Fine-tuned," Proceeding to serve warrant at 728, Oak Drive, requesting additional units.","Proceeding to serve warrant at 728 Oak Drive, requesting additional units.",0.09090909090909091,1.0,1,1,traffic,15.0
+Baseline," Traffic stop initiated on Silver sedan. License plate Alfa Bravo CHAR, LiE 123","Traffic stop initiated on silver sedan, license plate Alpha-Bravo-Charlie-123.",0.8888888888888888,,0,0,clean,
+Fine-tuned," Traffic stop initiated on Silver sedan. License plate Alfa Bravo CHAR, LiE 123","Traffic stop initiated on silver sedan, license plate Alpha-Bravo-Charlie-123.",0.8888888888888888,,0,0,clean,
+Baseline, Vehicle matching Bolo description spotted heading eastbound on Highway 42.,Vehicle matching BOLO description spotted heading eastbound on Highway 42.,0.1,1.0,1,1,wind,15.0
+Fine-tuned, Vehicle matching Bolo description spotted heading eastbound on Highway 42.,Vehicle matching BOLO description spotted heading eastbound on Highway 42.,0.1,1.0,1,1,wind,15.0
+Baseline," Proceeding to serve warrant at 728, Oak Drive. Requesting additional units","Proceeding to serve warrant at 728 Oak Drive, requesting additional units.",0.36363636363636365,1.0,1,1,clean,
+Fine-tuned," Proceeding to serve warrant at 728, Oak Drive. Requesting additional units","Proceeding to serve warrant at 728 Oak Drive, requesting additional units.",0.36363636363636365,1.0,1,1,clean,

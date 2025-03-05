@@ -1,0 +1,13 @@
+term,baseline_accuracy,finetuned_accuracy,occurrence_count,improvement
+code 10-31,1.0,1.0,5,0.0
+backup,1.0,1.0,2,0.0
+suspect,1.0,1.0,7,0.0
+officer,1.0,1.0,4,0.0
+bolo,1.0,1.0,2,0.0
+perpetrator,1.0,1.0,3,0.0
+witness,1.0,1.0,4,0.0
+dispatch,1.0,1.0,2,0.0
+warrant,1.0,1.0,3,0.0
+10-50,1.0,1.0,2,0.0
+officer down,1.0,1.0,2,0.0
+surveillance,1.0,1.0,3,0.0
