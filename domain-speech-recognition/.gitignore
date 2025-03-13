@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+data/generated/
+data/processed_dataset/
+data/validation_results/
+models/

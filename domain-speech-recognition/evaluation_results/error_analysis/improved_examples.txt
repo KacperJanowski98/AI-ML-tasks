@@ -1,0 +1,12 @@
+Examples where fine-tuned model significantly outperforms baseline:
+Total count: 1
+
+Reference: Code 10-15, transporting suspect to central booking.
+Noise Type: crowd, SNR: 10.0
+Baseline WER: 0.5714
+Fine-tuned WER: 0.2857
+WER Improvement: 0.2857
+Baseline:  Code 10 to 15. Transporting suspect to central booking.
+Fine-tuned:  Code 10-15. Transporting suspect to central booking.
+--------------------------------------------------------------------------------
+
